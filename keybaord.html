@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="wrapper py-4 px-6 md:px-6 lg:px-12">
+      <!-- header -->
+      <header>
+        <!-- main heading -->
+        <h1 class="text-3xl font-bold px-6 py-3 text-center">
+          Keyboard Events
+        </h1>
+      </header>
+      <!-- main section -->
+      <main>
+        <div class="px-6 py-3 m-4 text-xl flex flex-col gap-3">
+          <label class="font-bold">Enter Message </label>
+          <input
+            id="text-field"
+            type="text"
+            class="bg-slate-200 px-6 py-2 rounded-md text-black"
+          />
+        </div>
+      </main>
+      <!-- footer -->
+      <footer></footer>
+    </div>
+
+    <!-- add event hanlders -->
+    <script>
+      //textfield
+      let textField = document.getElementById("text-field");
+      //   add keybaord events
+      // keydown
+    //   textField.addEventListener("keydown", (e) => {
+    //     console.log({ code: e.code, key: e.key });
+    //   });
+      // keyUP
+      textField.addEventListener("keyup", (e) => {
+        // console.log({code:e.code, key:e.key})
+        if (e.key === "Enter") {
+          alert(`You Entered ${e.target.value}`);
+          e.target.value = ""
+        }
+      });
+    </script>
+  </body>
+</html>
