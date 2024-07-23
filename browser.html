@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Browser Events</title>
+  </head>
+
+  <body>
+    <header>
+        <h1>Broswer Events</h1>
+    </header>
+    <main></main>
+    <footer>
+      <h4>&copy; www.site.com 2024</h4>
+    </footer>
+
+    <!-- scripts -->
+     <script>
+        //add page loaded
+        window.addEventListener('load', (e)=>{
+            // alert("Loaded")
+            console.log("loaded")
+        })
+
+        // resize
+        window.addEventListener('resize', (e)=>{
+            // alert("resized")
+            let h = window.innerHeight,
+                w = window.innerWidth
+            console.log({h,w})
+        })
+     </script>
+  </body>
+</html>
