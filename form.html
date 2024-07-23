@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="wrapper py-4 px-6 md:px-6 lg:px-12">
+      <!-- header -->
+      <header>
+        <!-- main heading -->
+        <h1 class="text-3xl font-bold px-6 py-3 text-center">Form Events</h1>
+      </header>
+      <!-- main section -->
+      <main>
+        <form
+        id="registration-form"
+          class="px-6 py-4 pb-12 bg-slate-200 w-full md:w-[600px] min-h-[400px] rounded shadow-black shadow-2xl mx-auto flex flex-col gap-4"
+        >
+          <h3 class="text-2xl text-center font-bold md:text-4xl underline">
+            Register Here
+          </h3>
+
+          <!--  -->
+          <div class="px-3 py-2 flex flex-col gap-2">
+            <label class="text-lg" for="">Full Name:</label
+            ><input
+              type="text"
+              class="px-6 py-3 text-lg rounded-lg"
+              name="name"
+              placeholder="Enter Name"
+            />
+          </div>
+          <div class="px-3 py-2 flex flex-col gap-2">
+            <label class="text-lg" for="">Email Address:</label
+            ><input
+              type="email"
+              class="px-6 py-3 text-lg rounded-lg"
+              name="email"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="px-3 py-2 flex flex-col gap-2">
+            <label class="text-lg" for="">Mobile</label
+            ><input
+            id="mobile"
+              type="text"
+              class="px-6 py-3 text-lg rounded-lg"
+              name="mobile "
+              placeholder="2547xxxxxxx"
+            />
+          </div>
+          <div class="px-3 py-2 flex flex-col gap-2">
+            <label class="text-lg" for="">Password:</label
+            ><input
+              type="password"
+              class="px-6 py-3 text-lg rounded-lg"
+              name="password"
+              placeholder="Enter Name"
+            />
+          </div>
+          
+          <button type="submit" class="bg-green-500 px-6 py-3 rounded text-white text-3xl">Submit</button>
+        </form>
+      </main>
+      <!-- footer -->
+      <footer></footer>
+    </div>
+
+    <!-- add event hanlders -->
+    <script>
+      // form
+let mobileInput = document.querySelector("#mobile")
+mobileInput.addEventListener("focusout", (e)=>{
+alert("out")
+})
+
+
+      const regForm  = document.querySelector("#registration-form")
+      //add submit event likstener
+      regForm.addEventListener('submit', (e)=>{
+        e.preventDefault()
+// formData api
+let form  = new FormData(regForm)
+let name= form.get('name')
+let email = form.get('email')
+let password = form.get('password')
+let mobile = form.get('mobile')
+
+console.log({name, email, password, mobile})
+      
+      })
+    </script>
+  </body>
+</html>
